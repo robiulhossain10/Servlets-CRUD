@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bank CRUD Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f6fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2f3640;
+            margin-bottom: 40px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0984e3;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        button {
+            margin-top: 15px;
+            background-color: #0984e3;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #74b9ff;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bank Customer CRUD Operations</h1>
+
+    <!-- Create Customer -->
+    <form action="addCustomer" method="post">
+        <h2>Add Customer</h2>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="balance">Balance:</label>
+        <input type="number" name="balance" id="balance" step="0.01" required />
+
+        <input type="submit" value="Add Customer" />
+    </form>
+
+    <!-- Update Customer Balance -->
+    <form action="updateCustomer" method="post">
+        <h2>Update Customer Balance</h2>
+        <label for="updateId">Customer ID:</label>
+        <input type="number" name="id" id="updateId" required />
+
+        <label for="newBalance">New Balance:</label>
+        <input type="number" name="balance" id="newBalance" step="0.01" required />
+
+        <input type="submit" value="Update Balance" />
+    </form>
+
+    <!-- Delete Customer -->
+    <form action="deleteCustomer" method="post">
+        <h2>Delete Customer</h2>
+        <label for="deleteId">Customer ID:</label>
+        <input type="number" name="id" id="deleteId" required />
+
+        <input type="submit" value="Delete Customer" />
+    </form>
+
+    <!-- View Customers -->
+    <form action="listCustomers" method="get">
+        <h2>View All Customers</h2>
+        <button type="submit">Show Customers</button>
+    </form>
+
+    <div class="footer">
+        &copy; 2025 Bank CRUD App. All rights reserved.
+    </div>
+</body>
+</html>
