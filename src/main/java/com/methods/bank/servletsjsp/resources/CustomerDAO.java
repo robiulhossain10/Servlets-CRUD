@@ -38,15 +38,21 @@ public class CustomerDAO {
         return list;
     }
 
-    public void updateCustomerBalance(int id, double newBalance) throws SQLException {
-        String sql = "UPDATE customers SET balance = ? WHERE id = ?";
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setDouble(1, newBalance);
-            ps.setInt(2, id);
-            ps.executeUpdate();
-        }
+public void updateCustomer(Customer customer) throws SQLException {
+    String sql = "UPDATE customers SET name = ?, email = ?, balance = ? WHERE id = ?";
+    
+    try (Connection conn = DBConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, customer.getName());
+        stmt.setString(2, customer.getEmail());
+        stmt.setDouble(3, customer.getBalance());
+        stmt.setInt(4, customer.getId());
+
+        stmt.executeUpdate();
     }
+}
+
 
     public void deleteCustomer(int id) throws SQLException {
         String sql = "DELETE FROM customers WHERE id = ?";
@@ -56,4 +62,7 @@ public class CustomerDAO {
             ps.executeUpdate();
         }
     }
+    
+
+
 }

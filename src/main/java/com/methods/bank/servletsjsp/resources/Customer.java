@@ -8,19 +8,25 @@ public class Customer {
     private double balance;
 
     // Constructor with id (for update/delete)
-    public Customer(int id, String name, String email, double balance) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.balance = balance;
-    }
+public Customer(int id, String name, String email, double balance) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.balance = balance;
+}
+
 
     // Constructor without id (for add)
-    public Customer(String name, String email, double balance) {
-        this.name = name;
-        this.email = email;
-        this.balance = balance;
-    }
+public Customer( String name, String email, double balance) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+    this.balance = balance;
+}
+
+    
+        // Constructors
+    public Customer() {};
 
     // Getters and Setters
     public int getId() { return id; }

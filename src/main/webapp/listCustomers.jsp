@@ -33,7 +33,7 @@
         }
 
         th {
-            background-color: #0984e3;
+            background-color: red;
             color: white;
         }
 
@@ -43,9 +43,13 @@
 
         .back-button {
             display: block;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-align: center;
             margin: 30px auto;
             padding: 10px 20px;
-            background-color: #0984e3;
+            background-color: green;
             color: white;
             border: none;
             border-radius: 5px;
@@ -55,7 +59,7 @@
         }
 
         .back-button:hover {
-            background-color: #74b9ff;
+            background-color: #7C3AED;
         }
     </style>
 </head>

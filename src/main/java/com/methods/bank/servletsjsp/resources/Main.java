@@ -10,7 +10,7 @@ public class Main {
 
         try {
             // Create
-            Customer c1 = new Customer(0, "Zilan Hossain", "robis@example.com", 10000);
+            Customer c1 = new Customer("LabibS Hossain", "robis@example.com", 10000);
             dao.addCustomer(c1);
             System.out.println("Added customer");
 
@@ -19,12 +19,12 @@ public class Main {
             customers.forEach(System.out::println);
 
             // Update
-            dao.updateCustomerBalance(1, 15000);
-            System.out.println("Updated balance for customer id=1");
+//            dao.updateCustomerBalance(1, 15000);
+//            System.out.println("Updated balance for customer id=1");
 
             // Delete
-            dao.deleteCustomer(1);
-            System.out.println("Deleted customer with id=1");
+//            dao.deleteCustomer(1);
+//            System.out.println("Deleted customer with id=1");
 
         } catch (Exception e) {
             e.printStackTrace();
